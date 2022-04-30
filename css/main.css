@@ -1,0 +1,10 @@
+.movies__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.movies__item {
+    margin: 30px;
+}
