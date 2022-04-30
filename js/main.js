@@ -1,12 +1,10 @@
-"use stick"
-
 let elResult = document.querySelector(".movies__result")
 let elList = document.querySelector(".movies__list")
 let elSelect = document.querySelector(".select")
+let elForm = document.querySelector(".form")
 
 
 elResult.textContent = films.length
-elSelect.innerHTML = null
 
 const generateGenres = function(films) {
   const filteredGenres = []
@@ -72,10 +70,20 @@ const renderFilms = function(filmsArray, element) {
 renderFilms(films, elList)
 generateGenres(films)
 
-//elForm submit
-//selectedFilmsArray
-//select value
-//films.genres.includes(selectedValue)
-//selectedFilmsArray.push(Film object)
+elForm.addEventListener("submit", function(evt) {
+    evt.preventDefault()
 
-//renderFilms(selectedFilmsArray)
+    elList.innerHTML = null;
+
+    let selectValue = elSelect.value
+
+    let filterFilms = []
+
+    films.forEach(film => {
+        if(selectValue === "All" || film.genres.includes(selectValue)){
+            filterFilms.push(film)
+        }
+    })
+
+    renderFilms(filterFilms, elList)
+})
