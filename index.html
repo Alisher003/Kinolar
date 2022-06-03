@@ -1,48 +1,247 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="./img/icon.png">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Kinolar</title>
+    <title>CF</title>
 </head>
-<body>
-    <!-- HEADER -->
-    <header></header>
 
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__box">
+
+            <div class="header__box-left">
+
+                <a class="header__logo-link" href="index.html">C
+                    <span class="header__logo-text">F</span>
+                </a>
+                <!-- HEADER__NAV -->
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a class="header__link" href="index.html">Home</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#category">Category</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#live">Live</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <button class="header__bookmark-btn">
+                <img class="header__bookmark-img" src="https://cf-movie.netlify.app/img/bookmarks-outline.svg" alt="bookmarks" width="20"
+                    height="20">
+                <span class="bookmark__length">0</span>
+            </button>
+
+            <a class="header__sing header__link" href="#">Sing in</a>
+
+        </div>
+    </header>
 
     <!-- MAIN -->
-    <main class="site-main">
-        <section class="movies py-3">
+    <main class="main">
+
+        <!-- HERO -->
+        <section class="hero">
             <div class="container">
-                <h1 class="movies__heading  text-center">Movies Catalog</h1>
-
-                <p class="d-inline-block p-2 text-white rounded bg-info">Result Count: <span class="movies__result text-black">0</span></p>
-
-            <form class="form">
-                <select class="select">
-                    <option value="All">All</option>
-                </select>
-
-                <button>Search</button>
-            </form>
-
-            <ul class="movies__list">
-            </ul>
+                <div class="hero__wrap">
+                    <img class="hero__img" src="https://cf-movie.netlify.app/img/John-Wick-3.jpg" alt="hero-img" width="1111" height="400">
+                    <div class="hero__containt">
+                        <div class="hero__containt-info">
+                            <span class="hero-info actionth">Action/Thriller</span>
+                            <span class="hero-info year">2019</span>
+                            <span class="hero-info time">2h 11m</span>
+                        </div>
+                        <h2 class="hero__header">John Wick: Chapter 3 - Parabellum</h2>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- MOVIE -->
+        <section class="movie">
+            <div class="container">
+
+                <!-- FILTER BOR -->
+                <div class="movie__filter-bar">
+                    <div class="filter-dropdowns">
+                        <select name="genre" class="form__select genre">
+                            <option value="all">All</option>
+                        </select>
+                        <select name="year" class="year">
+                            <option value="all years">All the years</option>
+                        </select>
+                    </div>
+
+                    <form class="form">
+                        <input class="form__input" type="text" placeholder="Search...">
+                        <button class="form__btn"></button>
+                    </form>
+
+                    <div class="movie__filter-radios">
+                        <input type="radio" name="grade" id="featured" checked>
+                        <label for="featured">Featured</label>
+
+                        <input type="radio" name="grade" id="popular">
+                        <label for="popular">Popular</label>
+
+                        <input type="radio" name="grade" id="newest">
+                        <label for="newest">Newest</label>
+
+                        <div class="checked-radio-bg"></div>
+                    </div>
+                </div>
+
+
+                <!-- MOVIE CARD -->
+                <ul class="movie__list">
+                    <li class="movie__item">
+                        <div class="movie__card">
+                            <div class="movie__card-header">
+                                <img class="movie__card-img" src="https://cf-movie.netlify.app/img/endgame.jpg" alt="movie-card-img" width="160"
+                                    height="250">
+
+                                <div class="movie__card-overlay">
+                                    <button class="bookmark"></button>
+                                    <div class="rating">
+                                        <span class="movie__rating">0.9</span>
+                                    </div>
+                                    <div class="play"></div>
+                                    <div class="film-info"></div>
+                                </div>
+                            </div>
+
+                            <div class="movie__card-body">
+                                <h3 class="movie__card-title">Avengers: Endgame</h3>
+                                <span class="movie__card-info">Action/Comedy</span>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bookmar__modal">
+                <div class="bookmark__panel">
+                    <ul class="bookmark__list">
+                    </ul>
+                </div>
+
+                <div class="bookmark__overlay"></div>
+            </div>
+        </section>
+
+        <!-- CATEGORY -->
+        <section class="category" id="category">
+            <div class="container">
+                <h2 class="category__title">Category</h2>
+
+                <ul class="category__list">
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/action.jpg" alt="action" width="225" height="150">
+                        <div class="name">Action</div>
+                        <div class="total">100</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/comedy.jpg" alt="comedi" width="225" height="150">
+                        <div class="name">Comedy</div>
+                        <div class="total">50</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/thriller.webp" alt="thriller" width="225" height="150">
+                        <div class="name">Thriller</div>
+                        <div class="total">27</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/horror.jpg" alt="horror" width="225" height="150">
+                        <div class="name">Horror</div>
+                        <div class="total">80</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/adventure.jpg" alt="adventure" width="225" height="150">
+                        <div class="name">Adventure</div>
+                        <div class="total">100</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/animated.jpg" alt="animated" width="225" height="150">
+                        <div class="name">Animated</div>
+                        <div class="total">86</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/crime.jpg" alt="crime" width="225" height="150">
+                        <div class="name">Crime</div>
+                        <div class="total">24</div>
+                    </li>
+                    <li class="category__item">
+                        <img class="category__img" src="https://cf-movie.netlify.app/img/sci-fi.jpg" alt="sci" width="225" height="150">
+                        <div class="name">SCI-FI</div>
+                        <div class="total">84</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- LIVE -->
+        <section class="live" id="live">
+            <div class="container">
+
+                <h2 class="live__title">Live Tv Shows</h2>
+
+                <ul class="live__list">
+                    <li class="live__item">
+                        <div class="live-card__header">
+                            <img class="live-card__img" src="https://cf-movie.netlify.app/img/spider-man-no-way-home.jpg" alt="" width="350"
+                                height="250">
+                            <div class="live-card__badge">LIVE</div>
+                            <div class="live-card__viewers">305K viewers</div>
+                        </div>
+                        <div class="live-card__body">
+                            <h3 class="live-card__title">Spider-man-no-way-home</h3>
+                        </div>
+                    </li>
+                    <li class="live__item">
+                        <div class="live-card__header">
+                            <img class="live-card__img" src="https://cf-movie.netlify.app/img/endgame.jpg" alt="endgame" width="350" height="250">
+                            <div class="live-card__badge">LIVE</div>
+                            <div class="live-card__viewers">2.4M viewers</div>
+                        </div>
+                        <div class="live-card__body">
+                            <h3 class="live-card__title">Endgame</h3>
+                        </div>
+                    </li>
+                    <li class="live__item">
+                        <div class="live-card__header">
+                            <img class="live-card__img" src="https://cf-movie.netlify.app/img/got.jpg" alt="got" width="350" height="250">
+                            <div class="live-card__badge">LIVE</div>
+                            <div class="live-card__viewers">1.4M viewers</div>
+                        </div>
+                        <div class="live-card__body">
+                            <h3 class="live-card__title">Game of Thrones</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
-
     <!-- FOOTER -->
-    <footer></footer>
-
-
-    <!-- LINK JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <footer class="footer"></footer>
+    <!-- JAVASCRIPT -->
     <script src="./js/films.js"></script>
     <script src="./js/main.js"></script>
+
 </body>
+
 </html>
